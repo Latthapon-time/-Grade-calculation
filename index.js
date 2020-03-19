@@ -4,14 +4,44 @@ const obj = {
     credit : '60'
 }
 
-const funcgrede = (name1 = 'defaultname',grage1= 'defaultgrage',credit1= 0) => {
+const funcgrede = (name1 = 'defaultname',grage1= 0.0,credit1= 0) => {
 
-    if(credit1<60){
-        credit1 = 0
-        
-    }else{
-        credit1 = credit1
+    if(credit1>=60)
+    {
+        if(grage1 == 0.0){
+            grage1 = 'F'
+        }else if(grage1 == 1.0){
+            grage1 = 'D'
+        }else if(grage1 == 1.5){
+            grage1 = 'D+'
+        }else if(grage1 == 2.0){
+            grage1 = 'C'
+        }else if(grage1 == 2.5){
+            grage1 = 'C+'
+        }else if(grage1 == 3.0){
+            grage1 = 'B'
+        }else if(grage1 == 3.5){
+            grage1 = 'B+'
+        }else if(grage1 == 4.0){
+            grage1 = 'A'
+        }      
     }
+    else
+    {
+        if(grage1 == 2.5){
+            grage1 = 'D'
+        }else if(grage1 == 3.0){
+            grage1 = 'D+'
+        }else if(grage1 == 3.5){
+            grage1 = 'C'
+        }else if(grage1 == 4.0){
+            grage1 = 'C+'
+        }else{
+            grage1 = 'F'
+        }
+    }
+        
+    
     const obj2 = {
         name : name1,
         grage : grage1,
@@ -25,5 +55,5 @@ const funcgrede = (name1 = 'defaultname',grage1= 'defaultgrage',credit1= 0) => {
 }
 
 
-let test1 = funcgrede('time','4.00',60)
+let test1 = funcgrede('time',4,50)
 console.log(test1)
